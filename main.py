@@ -12,13 +12,13 @@ app = FastAPI()
 scheduler = AsyncIOScheduler()
 
 async def scheduled_update():
-    print("🕛 Обновление данных по расписанию...")
+    print("Обновление данных по расписанию...")
     try:
         data = await get_all_matches_for_three_days()
         generate_all_pages(data)
-        print("✅ Данные успешно обновлены.")
+        print("Данные успешно обновлены.")
     except Exception as e:
-        print(f"❌ Ошибка при обновлении данных: {e}")
+        print(f"Ошибка при обновлении данных: {e}")
 
 @app.on_event("startup")
 async def startup_event():
