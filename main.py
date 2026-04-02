@@ -20,7 +20,7 @@ async def scheduled_update():
     except Exception as e:
         print(f"❌ Ошибка при обновлении данных: {e}")
 
-
+@app.on_event("startup")
 async def startup_event():
     # Первоначальное получение данных
     data = await get_all_matches_for_three_days()
